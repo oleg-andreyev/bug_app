@@ -2,7 +2,16 @@
 
 namespace App\Repository;
 
-class ProductRepository
-{
+use App\Entity\Product;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
+class ProductRepository extends ServiceEntityRepository
+{
+    public function __construct(
+        ManagerRegistry $registry,
+        private readonly CategoryRepository $categoryRepository,
+    ) {
+        parent::__construct($registry, Product::class);
+    }
 }
