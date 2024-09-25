@@ -33,6 +33,7 @@ class BugCommand extends Command
         // 2. ./bin/console d:q:sql 'INSERT INTO app.category (id, name) VALUES (1, "cat1")'
         // 3. ./bin/console d:q:sql 'INSERT INTO app.category (id, name) VALUES (2, "cat2")'
         // 4. ./bin/console d:q:sql 'INSERT INTO app.category (id, name) VALUES (3, "cat3")'
+        // set break point in \Symfony\Bridge\Doctrine\Form\ChoiceList\ORMQueryBuilderLoader::getEntitiesByIds
         // 5. ./bin/console app:bug
         // 6. we've loaded all entities with finaAll, later getEntitiesByIds will load them again because QB is bypassing UoW
         // this is okay on small set, but larger set...
